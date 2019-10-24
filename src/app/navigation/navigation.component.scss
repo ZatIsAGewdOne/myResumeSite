@@ -1,0 +1,45 @@
+$shadowColor: #000;
+$primaryColor: #fff;
+
+.zat-navigation {
+  color: $primaryColor;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  padding: 20px 60px;
+
+  h2 a {
+    text-decoration: none;
+    color: $primaryColor;
+  }
+
+  .zat-navigation-list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+
+    li {
+      margin-right: 20px;
+
+      a:link,
+      a:visited {
+        text-decoration: none;
+        color: $primaryColor;
+        padding-bottom: 1px;
+        border-bottom: 1px solid transparent;
+        -webkit-transition: border-bottom 0.5s;
+        transition: border-bottom 0.5s
+      }
+
+      a:hover,
+      a:active {
+        border-bottom: 1px solid $primaryColor;
+      }
+    }
+
+    li:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

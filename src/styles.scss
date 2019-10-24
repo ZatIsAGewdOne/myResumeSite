@@ -1,0 +1,16 @@
+@import './assets/vendor/scss/reset.scss';
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #fff;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 400;
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+}
