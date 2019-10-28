@@ -1,20 +1,21 @@
 .section-summary {
   height: 100vh;
   background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
 
   .summary-container {
-    vertical-align: center;
     padding: 30px;
     text-align: center;
 
     h2 {
       margin-bottom: 30px;
-      font-size: 225%;
+      font-size: 5vh;
       font-weight: 700;
     }
 
     .section-paragraph {
-      font-size: 150%;
+      font-size: 3.5vh;
       font-weight: 300;
       line-height: 1.5em;
       letter-spacing: 1px;
