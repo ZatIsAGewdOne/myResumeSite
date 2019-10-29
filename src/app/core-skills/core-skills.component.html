@@ -1,7 +1,10 @@
-<section class="section-core-skills">
-    <!-- <h2>{{coreSkill.sectionHeading | uppercase}}</h2> -->
-    <h2>CORE SKILLS</h2>
+<section *ngIf="coreSkill" class="section-core-skills">
+  <div *ngFor="let coreSkill of coreSkill">
+    <h2>{{coreSkill.sectionHeading | uppercase}}</h2>
     <div class="section-container">
-        <div class="typed-goes-here">{{typed}}</div>
+        <ngx-typed-js [strings]="coreSkill.skills" [typeSpeed]="20" [backSpeed]="10" [backDelay]="10000" [showCursor]="false" [loop]="true">
+          <div class="typing"></div>
+        </ngx-typed-js>
     </div>
+  </div>
 </section>
