@@ -1,7 +1,9 @@
-<section class="section-summary">
-  <div class="summary-container">
-      <h2>{{sectionHeading | uppercase}}</h2>
-      <!-- <p>{{sectionParagraph}}</p> -->
-      <div [innerHtml]="sectionParagraph" class="section-paragraph"></div>
+<section *ngIf="summary" class="section-summary">
+  <div *ngFor="let summary of summary">
+      <div class="summary-container">
+          <h2>{{summary.sectionHeading | uppercase}}</h2>
+          <!-- <p>{{sectionParagraph}}</p> -->
+          <div [innerHtml]="summary.summaryText" class="section-paragraph"></div>
+        </div>
   </div>
 </section>

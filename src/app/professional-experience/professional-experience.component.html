@@ -1,1 +1,7 @@
-
+<section *ngIf="myExperience" class="section-experience">
+    <div *ngFor="let myExperience of myExperience">
+        <div class="section-container">
+            <h2>{{myExperience.sectionHeading | uppercase}}</h2>
+        </div>
+    </div>
+</section>

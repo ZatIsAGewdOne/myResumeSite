@@ -1,8 +1,8 @@
-<nav class="zat-navigation">
+<nav *ngIf="menus" class="zat-navigation">
   <h2><a href="#">Edvardas.me</a></h2>
   <ul class="zat-navigation-list">
     <li *ngFor="let menu of menus" class="zat-navigation-menu">
-      <a href="#">{{menu}}</a>
+      <a href={{menu.menuLink}}>{{menu.menuTitle}}</a>
     </li>
   </ul>
 </nav>

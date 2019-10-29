@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Menu } from '../classes/Menu';
+import { ResumeService } from '../resume.service';
 
 @Component({
   selector: 'app-navigation',
@@ -7,14 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  menus = [
-    'About me',
-    'Contacts',
-    'Projects',
-    'Education'
-  ];
+  menus: Menu[];
 
-  constructor() {}
+  constructor(private resumeService: ResumeService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getMenus();
+  }
+
+  getMenus(): void {
+    this.resumeService.getMenus().subscribe(menus => this.menus = menus);
+  }
 }

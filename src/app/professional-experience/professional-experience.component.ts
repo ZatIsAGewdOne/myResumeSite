@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MyExperience } from '../classes/MyExperience';
+import { ResumeService } from '../resume.service';
 
 @Component({
   selector: 'app-professional-experience',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfessionalExperienceComponent implements OnInit {
 
-  constructor() { }
+  myExperience: MyExperience;
+
+  constructor(private resumeService: ResumeService) { }
 
   ngOnInit() {
+    this.getMyExperience();
   }
 
+  getMyExperience(): void {
+    this.resumeService.getMyExperience().subscribe(myExp => this.myExperience = myExp);
+  }
 }
