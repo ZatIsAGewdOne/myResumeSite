@@ -8,7 +8,7 @@ import { MyExperience } from './classes/MyExperience';
 import { Header } from './classes/Header';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CoreSkill } from './classes/CoreSkill';
-import { LoggingService } from './log/logging.service';
+import { LoggingService } from './logging/logging.service';
 
 @Injectable({
   providedIn: 'root'

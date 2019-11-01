@@ -12,8 +12,8 @@ import { SummaryComponent } from './summary/summary.component';
 import { CoreSkillsComponent } from './core-skills/core-skills.component';
 import { ProfessionalExperienceComponent } from './professional-experience/professional-experience.component';
 import { InMemoryDataService } from './in-memory-data.service';
-import { LoggingService } from './log/logging.service';
-import { LogPublishersService } from './log/log-publishers.service';
+import { LoggingService } from './logging/logging.service';
+import { LogPublishersService } from './logging/log-publishers.service';
 
 @NgModule({
   declarations: [
