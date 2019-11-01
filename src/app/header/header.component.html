@@ -1,7 +1,7 @@
 <header *ngIf="header">
   <app-navigation></app-navigation>
   
-  <div *ngFor="let header of header">
+  <div class="header-text-box" *ngFor="let header of header">
     <h1 class="heading-left">{{header.sectionHeading}}</h1>
     <div [innerHtml]="header.headerText" class="heading-right"></div>
     <!-- <h1 class="heading-right">My name is <br> Edvardas</h1> -->

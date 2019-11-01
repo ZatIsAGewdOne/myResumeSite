@@ -8,7 +8,7 @@ import { MyExperience } from './classes/MyExperience';
 import { Header } from './classes/Header';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CoreSkill } from './classes/CoreSkill';
-import { LoggingService } from './logging.service';
+import { LoggingService } from './log/logging.service';
 
 @Injectable({
   providedIn: 'root'
@@ -69,5 +69,6 @@ export class ResumeService {
 
   private log(message: string) {
     this.loggingService.add(message);
+    this.loggingService.log(message);
   }
 }
