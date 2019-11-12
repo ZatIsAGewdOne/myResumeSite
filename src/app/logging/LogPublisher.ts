@@ -8,3 +8,9 @@ export abstract class LogPublisher {
     abstract log(record: LogEntry): Observable<boolean>;
     abstract clear(): Observable<boolean>;
 }
+
+export class LogPublisherConfig {
+    loggerName: string;
+    loggerLocation: string;
+    isActive: boolean;
+}

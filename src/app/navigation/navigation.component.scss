@@ -1,45 +1,100 @@
-$shadowColor: #000;
-$primaryColor: #fff;
+// $shadowColor: #000;
+// $primaryColor: #fff;
 
-.zat-navigation {
-  color: $primaryColor;
+// .zat-navigation {
+//   color: $primaryColor;
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: baseline;
+
+//   padding: 20px 60px;
+
+//   h2 a {
+//     text-decoration: none;
+//     color: $primaryColor;
+//   }
+
+//   .zat-navigation-list {
+//     list-style: none;
+//     display: flex;
+//     justify-content: flex-end;
+
+//     li {
+//       margin-right: 20px;
+
+//       a:link,
+//       a:visited {
+//         text-decoration: none;
+//         color: $primaryColor;
+//         padding-bottom: 1px;
+//         border-bottom: 1px solid transparent;
+//         -webkit-transition: border-bottom 0.5s;
+//         transition: border-bottom 0.5s
+//       }
+
+//       a:hover,
+//       a:active {
+//         border-bottom: 1px solid $primaryColor;
+//       }
+//     }
+
+//     li:last-of-type {
+//       margin-right: 0;
+//     }
+//   }
+// }
+
+nav ul {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  margin-bottom: 0;
+  list-style: none;
+  padding-left: 0;
+  border: 1px solid #fff;
+  border-radius: 4px;
 
-  padding: 20px 60px;
+  li {
+    padding-left: 0;
+    border-left: 1px solid #fff;
 
-  h2 a {
-    text-decoration: none;
-    color: $primaryColor;
-  }
-
-  .zat-navigation-list {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-
-    li {
-      margin-right: 20px;
-
-      a:link,
-      a:visited {
-        text-decoration: none;
-        color: $primaryColor;
-        padding-bottom: 1px;
-        border-bottom: 1px solid transparent;
-        -webkit-transition: border-bottom 0.5s;
-        transition: border-bottom 0.5s
-      }
-
-      a:hover,
-      a:active {
-        border-bottom: 1px solid $primaryColor;
-      }
+    &:first-child {
+      border-left: 0;
     }
 
-    li:last-of-type {
-      margin-right: 0;
+    a {
+      display: block;
+      min-width: 7.5rem;
+      height: 2.75rem;
+      line-height: 2.75rem;
+      padding: 0 1.25rem 0 1.45rem;
+      letter-spacing: 0.2rem;
+      font-size: 0.8rem;
+      border-bottom: 0;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.075);
+      }
+
+      &:active {
+        background-color: rgba(255, 255, 255, 0.175);
+      }
     }
   }
+}
+
+nav.use-middle ul li.is-middle {
+  border-left: 0;
+}
+
+nav.use-middle:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1px);
+  width: 1px;
+  height: 100%;
+  background: #fff;
 }

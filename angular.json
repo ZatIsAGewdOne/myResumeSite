@@ -29,7 +29,13 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/vendor/js/breakpoints.min.js",
+              "src/assets/vendor/js/browser.min.js",
+              "src/assets/vendor/js/jquery.min.js",
+              "src/assets/vendor/js/main.js",
+              "src/assets/vendor/js/util.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {

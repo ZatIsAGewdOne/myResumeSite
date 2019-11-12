@@ -4,7 +4,18 @@ import { ResumeService } from '../resume.service';
 
 @Component({
   selector: 'app-core-skills',
-  templateUrl: './core-skills.component.html',
+  template: `
+  <section *ngIf="coreSkill" class="section-core-skills">
+  <div *ngFor="let coreSkill of coreSkill">
+    <h2>{{coreSkill.sectionHeading | uppercase}}</h2>
+    <div class="section-container">
+        <ngx-typed-js [strings]="coreSkill.skills" [typeSpeed]="20" [backSpeed]="10" [backDelay]="10000" [showCursor]="false" [loop]="true">
+          <div class="typing"></div>
+        </ngx-typed-js>
+    </div>
+  </div>
+  </section>`,
+  // templateUrl: './core-skills.component.html',
   styleUrls: ['./core-skills.component.scss']
 })
 export class CoreSkillsComponent implements OnInit {

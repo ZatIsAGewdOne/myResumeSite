@@ -1,9 +1,13 @@
-<header *ngIf="header">
-  <app-navigation></app-navigation>
-  
-  <div class="header-text-box" *ngFor="let header of header">
-    <h1 class="heading-left">{{header.sectionHeading}}</h1>
-    <div [innerHtml]="header.headerText" class="heading-right"></div>
-    <!-- <h1 class="heading-right">My name is <br> Edvardas</h1> -->
+<header *ngIf="header" id="header">
+  <div class="logo">
+    <span class="icon fa-df"><img src="../../favicon.ico"></span>
   </div>
+  <div class="content" *ngFor="let header of header">
+    <div class="inner">
+        <h1>{{header.sectionHeading | uppercase}}</h1>
+        <div [innerHtml]="header.headerText | uppercase"></div>
+    </div>
+  </div>
+
+  <app-navigation></app-navigation>
 </header>

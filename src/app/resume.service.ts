@@ -9,6 +9,7 @@ import { Header } from './classes/Header';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CoreSkill } from './classes/CoreSkill';
 import { LoggingService } from './logging/logging.service';
+import { ResumeWrapper } from './classes/ResumeWrapper';
 
 @Injectable({
   providedIn: 'root'
@@ -58,6 +59,13 @@ export class ResumeService {
     );
   }
 
+  getMyResume(): Observable<ResumeWrapper> {
+    return this.http.get<ResumeWrapper>(`${this.url}/resume`).pipe(
+      tap(_ => this.log('fetched resume')),
+      catchError(this.handleError<ResumeWrapper>('getMyResume'))
+    );
+  }
+
   private handleError<T>(action = 'action', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
@@ -68,7 +76,6 @@ export class ResumeService {
   }
 
   private log(message: string) {
-    this.loggingService.add(message);
-    this.loggingService.log(message);
+    this.loggingService.debug(message);
   }
 }

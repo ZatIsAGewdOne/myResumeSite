@@ -1,16 +1,175 @@
 @import './assets/vendor/scss/reset.scss';
 
+@-ms-viewport {
+  width: device-width;
+}
+
+@media screen and (max-width: 480px) {
+
+  html, body {
+    min-width: 320px;
+  }
+}
+
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
 
-html,
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 16pt;
+}
+
+@media screen and (max-width: 1680px) {
+
+  html {
+    font-size: 12pt;
+  }
+}
+
+@media screen and (max-width: 736px) {
+
+  html {
+    font-size: 11pt;
+  }
+}
+
+@media screen and (max-width: 360px) {
+
+  html {
+    font-size: 11pt;
+  }
+}
+
 body {
-  background-color: #fff;
   font-family: 'Roboto Mono', monospace;
-  font-weight: 400;
-  font-size: 20px;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.65;
   text-rendering: optimizeLegibility;
+  color: #fff;
+
+  &.is-preload *, &.is-preload *:before, &.is-preload *:after {
+    animation: none !important;
+    -webkit-animation: none !important;
+    -ms-animation: none !important;
+    -moz-animation: none !important;
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+  }
+
+  &.is-article-visible header {
+    transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    filter: blur(0.1rem);
+    -webkit-filter: blur(0.1rem);
+    -moz-filter: blur(0.1rem);
+    -ms-filter: blur(0.1rem);
+    opacity: 0;
+  }
+  
+  &.is-preload header {
+    filter: blur(0.125rem);
+    -webkit-filter: blur(0.125rem);
+    -moz-filter: blur(0.125rem);
+    -ms-filter: blur(0.125rem);
+  
+    & > * {
+      opacity: 0;
+    }
+  
+    .content .inner {
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      opacity: 0;
+    }
+  }
+}
+
+#bg {
+  transform: scale(1.0);
+  -webkit-transform: scale(1.0);
+  -moz-transform: scale(1.0);
+  -ms-transform: scale(1.0);
+  -webkit-backface-visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+
+  &:before, &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
+
+  &:before {
+      transition: background-color 2.5s ease-in-out;
+      -webkit-transition: background-color 2.5s ease-in-out;
+      -moz-transition: background-color 2.5s ease-in-out;
+      -ms-transition: background-color 2.5s ease-in-out;
+      transition-delay: 0.75s;
+      -webkit-transition-delay: 0.75s;
+      -moz-transition-delay: 0.75s;
+      -ms-transition-delay: 0.75s;
+      background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("./assets/vendor/images/overlay.png");
+      background-size: auto,
+      256px 256px;
+      background-position: center,
+      center;
+      background-repeat: no-repeat,
+      repeat;
+      z-index: 2;
+  }
+
+  &:after {
+      transform: scale(1.125);
+      -webkit-transform: scale(1.125);
+      -moz-transform: scale(1.125);
+      -ms-transform: scale(1.125);
+      transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
+      -webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
+      -moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out;
+      -ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
+      background-image: url("./assets/vendor/images/header_background.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 1;
+  }
+
+  body.is-article-visible & {
+      &:after {
+          transform: scale(1.0825);
+          -webkit-transform: scale(1.0825);
+          -moz-transform: scale(1.0825);
+          -ms-transform: scale(1.0825);
+          filter: blur(0.2rem);
+          -webkit-filter: blur(0.2rem);
+          -moz-filter: blur(0.2rem);
+          -ms-filter: blur(0.2rem);
+      }
+  }
+
+  body.is-preload & {
+      #bg:before {
+          background-color: #fff;
+      }
+  }
 }
