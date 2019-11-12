@@ -27,14 +27,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/assets/vendor/css/reset.css",
+              "src/styles.scss",
+              {
+                "input": "src/noscript.css",
+                "lazy": true
+              }
             ],
             "scripts": [
-              "src/assets/vendor/js/breakpoints.min.js",
-              "src/assets/vendor/js/browser.min.js",
-              "src/assets/vendor/js/jquery.min.js",
-              "src/assets/vendor/js/main.js",
-              "src/assets/vendor/js/util.js"
+              "src/assets/js/index.js"
             ],
             "es5BrowserSupport": true
           },
@@ -92,7 +93,13 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              {
+                "input": "src/assets/js/index.js",
+                "lazy": true,
+                "bundleName": "index"
+              }
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
