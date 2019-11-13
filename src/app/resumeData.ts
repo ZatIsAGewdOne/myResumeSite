@@ -9,7 +9,7 @@ export const MENUS: Menu[] = [
         menuLink: '#'
     },
     {
-        menuTitle: 'Contacts', 
+        menuTitle: 'Contact me', 
         menuLink: '#'
     },
     {

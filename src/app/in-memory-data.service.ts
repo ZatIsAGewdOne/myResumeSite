@@ -13,19 +13,19 @@ export class InMemoryDataService implements InMemoryDbService {
         menus: [
           {
               menuTitle: 'About me', 
-              menuLink: '#'
+              menuLink: '/summary'
           },
           {
               menuTitle: 'Contacts', 
-              menuLink: '#'
+              menuLink: '/contacts'
           },
           {
               menuTitle: 'Projects', 
-              menuLink: '#'
+              menuLink: '/professional-experience'
           },
           {
               menuTitle: 'Education', 
-              menuLink: '#'
+              menuLink: '/core-skills'
           }
         ],
 
@@ -66,20 +66,20 @@ export class InMemoryDataService implements InMemoryDbService {
     
     const menus = [
       {
-          menuTitle: 'About me', 
-          menuLink: '#'
+        menuTitle: 'About me', 
+        menuLink: '/summary'
       },
       {
           menuTitle: 'Contacts', 
           menuLink: '#'
       },
       {
-          menuTitle: 'Projects', 
-          menuLink: '#'
+          menuTitle: 'Experience', 
+          menuLink: '/professional-experience'
       },
       {
-          menuTitle: 'Education', 
-          menuLink: '#'
+          menuTitle: 'Core Skills', 
+          menuLink: '/core-skills'
       }
   ];
   

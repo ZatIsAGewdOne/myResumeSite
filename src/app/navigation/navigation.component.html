@@ -4,7 +4,7 @@
   <ul>
     <li *ngFor="let menu of menus; let i = index"
         [ngClass]="{'is-middle': i == menus.length / 2}">
-      <a href={{menu.menuLink}}>{{menu.menuTitle}}</a>
+      <a routerLink={{menu.menuLink}}>{{menu.menuTitle}}</a>
     </li>
   </ul>
 </nav>

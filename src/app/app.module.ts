@@ -14,6 +14,7 @@ import { ProfessionalExperienceComponent } from './professional-experience/profe
 import { InMemoryDataService } from './in-memory-data.service';
 import { LoggingService } from './logging/logging.service';
 import { LogPublishersService } from './logging/log-publishers.service';
+import { ContactMeComponent } from './contact-me/contact-me.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LogPublishersService } from './logging/log-publishers.service';
     NavigationComponent,
     SummaryComponent,
     CoreSkillsComponent,
-    ProfessionalExperienceComponent
+    ProfessionalExperienceComponent,
+    ContactMeComponent
   ],
   imports: [
     BrowserModule,

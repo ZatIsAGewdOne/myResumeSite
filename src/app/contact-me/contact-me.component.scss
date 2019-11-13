@@ -1,0 +1,98 @@
+form {
+    margin: 0 0 2rem 0;
+
+    & > :last-child {
+        margin-bottom: 0;
+    }
+
+    & > .fields {
+        display: flex;
+        flex-wrap: wrap;
+        width: calc(100% + 3rem);
+        margin: -1.5rem 0 2rem -1.5rem
+    }
+
+    & > .fields > .field {
+        flex-grow: 0;
+        flex-shrink: 0;
+        padding: 1.5rem 0 0 1.5rem;
+        width: calc(100% - 1.5rem);
+    }
+
+    & > .fields > .field.half {
+        width: calc(50% - 0.75rem);
+    }
+}
+
+label {
+    color: #fff;
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+    line-height: 1.5;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+    appearance: none;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    background-color: transparent;
+    border-radius: 4px;
+    border: solid 1px #fff;
+    color: inherit;
+    display: block;
+    outline: 0;
+    padding: 0 1rem;
+    text-decoration: none;
+    width: 100%;
+}
+
+input[type="text"]:invalid,
+input[type="password"]:invalid,
+input[type="email"]:invalid,
+select:invalid,
+textarea:invalid {
+    box-shadow: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    background: rgba(255, 255, 255, 0.075);
+    border-color: #fff;
+    box-shadow: 0 0 0 1px #fff;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    height: 2.75rem;
+}
+
+textarea {
+    padding: 0.75rem 1rem;
+}
+
+::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+    opacity: 1.0;
+}
+
+::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+    opacity: 1.0;
+}
+
+:-moz-placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+    opacity: 1.0;
+}

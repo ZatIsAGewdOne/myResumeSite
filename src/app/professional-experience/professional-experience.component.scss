@@ -2,32 +2,33 @@
     background-color: #f4f4f4;
     color: #000;
     padding: 2%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 
     .section-container {
 
-        text-align: center;
-        line-height: 1.5em;
-
         h2 {
             font-weight: 700;
-            font-size: 200%;
-
-            margin-bottom: 20px;
+            font-size: 5vh;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
         .experience-box {
-
+            line-height: 1.5em;
             text-align: left;
 
             h3 {
                 font-weight: 700;
-                font-size: 150%;
-
+                font-size: 4vh;
                 margin-bottom: 1%;
             }
 
             ul {
+                font-size: 3.5vh;
                 padding-left: 2%;
+                line-height: 1.5;
             }
         }
 
