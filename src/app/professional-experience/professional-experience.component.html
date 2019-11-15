@@ -5,7 +5,7 @@
 
             <div class="experience-box">
                 <h3>{{myExperience.typeOfWork}}</h3>
-                <h3>{{myExperience.company}} &#8210; {{myExperience.startDate | date:'MMMM, yyyy'}} &#8210; {{myExperience.endDate | date:'MMMM, yyyy'}}</h3>
+                <h3>{{myExperience.company}} &#8210; {{myExperience.startDate.toDate() | date:'MMMM, yyyy'}} &#8210; {{myExperience.endDate.toDate() | date:'MMMM, yyyy'}}</h3>
                 <h3>Key Deliverables: </h3>
                 <ul style="list-style-type:circle;">
                     <li *ngFor="let task of myExperience.tasks">

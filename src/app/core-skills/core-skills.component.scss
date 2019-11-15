@@ -1,13 +1,16 @@
 .section-core-skills {
-    background-color: transparent;
-    color: #fff;
-    padding: 30px;
+    background-color: #fff;
+    color: #000;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
 }
 
 .section-container {
     display: flex;
     align-items: center;
-    height: 40vh;
+    height: 50vh;
+    width: 80vw;
     text-align: center;
 }
 

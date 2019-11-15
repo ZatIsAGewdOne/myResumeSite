@@ -9,7 +9,7 @@ import { ResumeService } from '../resume.service';
 })
 export class ProfessionalExperienceComponent implements OnInit {
 
-  myExperience: MyExperience;
+  myExperience: MyExperience[];
 
   constructor(private resumeService: ResumeService) { }
 

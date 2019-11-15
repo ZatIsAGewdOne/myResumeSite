@@ -20,7 +20,7 @@ import { ResumeService } from '../resume.service';
 })
 export class CoreSkillsComponent implements OnInit {
 
-  coreSkill: CoreSkill;
+  coreSkill: CoreSkill[];
 
   constructor(private resumeService: ResumeService) { }
 

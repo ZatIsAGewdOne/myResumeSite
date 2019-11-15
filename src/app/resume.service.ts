@@ -1,69 +1,54 @@
 import { Injectable } from '@angular/core';
 import { Menu } from './classes/Menu';
-import { MENUS, SUMMARY, MYEXPERIENCE, HEADER } from './resumeData';
 import { Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Summary } from './classes/Summary';
 import { MyExperience } from './classes/MyExperience';
 import { Header } from './classes/Header';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CoreSkill } from './classes/CoreSkill';
 import { LoggingService } from './logging/logging.service';
-import { ResumeWrapper } from './classes/ResumeWrapper';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ResumeService {
 
-  private url = 'api'
-
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  }
-
-  constructor(private http: HttpClient, private loggingService: LoggingService) { }
+  constructor(private loggingService: LoggingService, private db: AngularFirestore) { }
 
   getMenus(): Observable<Menu[]> {
-    return this.http.get<Menu[]>(`${this.url}/menus`).pipe(
-      tap(_ => this.log('fetched menus')),
-      catchError(this.handleError<Menu[]>('getMenus', []))
+    return this.db.collection<Menu>('menus').valueChanges().pipe(
+      tap(_ => this.log('fetched menus from firestore')),
+      catchError(this.handleError<Menu[]>('getMenusFromFirestore', []))
     );
   }
 
-  getHeader(): Observable<Header> {
-    return this.http.get<Header>(`${this.url}/header`).pipe(
-      tap(_ => this.log('fetched header')),
-      catchError(this.handleError<Header>('getHeader'))
+  getHeader(): Observable<Header[]> {
+    return this.db.collection<Header>('header').valueChanges().pipe(
+      tap(_ => this.log('fetched header from firestore')),
+      catchError(this.handleError<Header[]>('getHeaderFromFirestore', []))
     );
   }
 
-  getSummary(): Observable<Summary> {
-    return this.http.get<Summary>(`${this.url}/summary`).pipe(
-      tap(_ => this.log('fetched summary')),
-      catchError(this.handleError<Summary>('getSummary'))
+  getSummary(): Observable<Summary[]> {
+    return this.db.collection<Summary>('summary').valueChanges().pipe(
+      tap(_ => this.log('fetched header from firestore')),
+      catchError(this.handleError<Summary[]>('getSummaryFromFirestore', []))
     );
   }
 
-  getCoreSkills(): Observable<CoreSkill> {
-    return this.http.get<CoreSkill>(`${this.url}/coreSkills`).pipe(
-      tap(_ => this.log('fetched core skills')),
-      catchError(this.handleError<CoreSkill>('getCoreSkills'))
+  getCoreSkills(): Observable<CoreSkill[]> {
+    return this.db.collection<CoreSkill>('coreSkills').valueChanges().pipe(
+      tap(_ => this.log('fetched core skill from firestore')),
+      catchError(this.handleError<CoreSkill[]>('getCoreSkills', []))
     );
   }
 
-  getMyExperience(): Observable<MyExperience> {
-    return this.http.get<MyExperience>(`${this.url}/myExperience`).pipe(
-      tap(_ => this.log('fetched myExperience')),
-      catchError(this.handleError<MyExperience>('getMyExperience'))
-    );
-  }
-
-  getMyResume(): Observable<ResumeWrapper> {
-    return this.http.get<ResumeWrapper>(`${this.url}/resume`).pipe(
-      tap(_ => this.log('fetched resume')),
-      catchError(this.handleError<ResumeWrapper>('getMyResume'))
-    );
+  getMyExperience(): Observable<MyExperience[]> {
+    return this.db.collection<MyExperience>('myExperience').valueChanges().pipe(
+      tap(_ => this.log('fetched myExperience from firestore')),
+      catchError(this.handleError<MyExperience[]>('getMyExperience', []))
+    )
   }
 
   private handleError<T>(action = 'action', result?: T) {

@@ -9,7 +9,7 @@ import { ResumeService } from '../resume.service';
 })
 export class SummaryComponent implements OnInit {
 
-  summary: Summary;
+  summary: Summary[];
 
   // sectionHeading = 'Summary';
 
