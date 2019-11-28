@@ -11,19 +11,15 @@
     -moz-align-items: center;
     -webkit-align-items: center;
     -ms-align-items: center;
-    // justify-content: space-between;
-    // -moz-justify-content: space-between;
-    // -webkit-justify-content: space-between;
-    // -ms-justify-content: space-between;
-    width: auto;
+    justify-content: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
     padding: 4rem 2rem;
     z-index: 3;
     position: relative;
-
-    &:before {
-        content: '';
-        display: block;
-    }
+    min-height: 100vh;
+    padding: 4rem 2rem;
 }
 
 @media screen and (max-width: 1680px) {

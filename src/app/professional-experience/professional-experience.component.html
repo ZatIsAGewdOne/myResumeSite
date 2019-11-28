@@ -1,7 +1,8 @@
 <section *ngIf="myExperience" class="section-experience">
     <div *ngFor="let myExperience of myExperience">
+        <button (click)="goBack()">Go Back</button>
         <div class="section-container">
-            <h2>{{myExperience.sectionHeading | uppercase}}</h2>
+            <h2 class="major">{{myExperience.sectionHeading | uppercase}}</h2>
 
             <div class="experience-box">
                 <h3>{{myExperience.typeOfWork}}</h3>

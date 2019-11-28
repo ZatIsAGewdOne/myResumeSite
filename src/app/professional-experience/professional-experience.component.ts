@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MyExperience } from '../classes/MyExperience';
 import { ResumeService } from '../resume.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-professional-experience',
@@ -11,7 +12,7 @@ export class ProfessionalExperienceComponent implements OnInit {
 
   myExperience: MyExperience[];
 
-  constructor(private resumeService: ResumeService) { }
+  constructor(private resumeService: ResumeService, private location: Location) { }
 
   ngOnInit() {
     this.getMyExperience();
@@ -19,5 +20,9 @@ export class ProfessionalExperienceComponent implements OnInit {
 
   getMyExperience(): void {
     this.resumeService.getMyExperience().subscribe(myExp => this.myExperience = myExp);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

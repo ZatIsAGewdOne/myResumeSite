@@ -1,46 +1,71 @@
 nav ul {
-    display: flex;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    margin-bottom: 0;
-    list-style: none;
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  margin-bottom: 0;
+  list-style: none;
+  padding-left: 0;
+  border: 1px solid #fff;
+  border-radius: 4px;
+
+  li {
     padding-left: 0;
-    border: 1px solid #fff;
-    border-radius: 4px;
-  
-    li {
-      padding-left: 0;
-      border-left: 1px solid #fff;
-  
-      &:first-child {
-        border-left: 0;
+    border-left: 1px solid #fff;
+
+    &:first-child {
+      border-left: 0;
+    }
+
+    a {
+      display: block;
+      min-width: 7.5rem;
+      height: 2.75rem;
+      line-height: 2.75rem;
+      padding: 0 1.25rem 0 1.45rem;
+      letter-spacing: 0.2rem;
+      font-size: 0.8rem;
+      border-bottom: 0;
+      text-decoration: none;
+      transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+      -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+      -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+      -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+      text-decoration: none;
+      color: inherit;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.075);
       }
-  
-      a {
-        display: block;
-        min-width: 7.5rem;
-        height: 2.75rem;
-        line-height: 2.75rem;
-        padding: 0 1.25rem 0 1.45rem;
-        letter-spacing: 0.2rem;
-        font-size: 0.8rem;
-        border-bottom: 0;
-        text-decoration: none;
-        transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-        -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-        -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-        -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-        text-decoration: none;
-        color: inherit;
-  
-        &:hover {
-          background-color: rgba(255, 255, 255, 0.075);
-        }
-  
-        &:active {
-          background-color: rgba(255, 255, 255, 0.175);
-        }
+
+      &:active {
+        background-color: rgba(255, 255, 255, 0.175);
       }
     }
   }
+}
+
+@media screen and (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    min-width: 10rem;
+    max-width: 100%;
+
+    li {
+      border-left: 0;
+      border-top: solid 1px #fff;
+
+      &:first-child {
+        border-top: 0;
+      }
+
+      a {
+        height: 3rem;
+        line-height: 3rem;
+        min-width: 0;
+        width: 100%;
+        padding: 0;
+      }
+    }
+  }
+}

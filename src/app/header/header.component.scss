@@ -1,8 +1,30 @@
 @import 'header';
 
+@media screen and (max-width: 980px) {
+  header .content p br {
+    display: none;
+  }
+}
 
 @media screen and (max-width: 736px) {
   header {
+
+    & > * {
+      margin-top: 2rem;
+    }
+
+    & > *:before {
+      top: calc(-2rem - 1px);
+      height: calc(2rem + 1px);
+    }
+
+   .content .inner {
+     padding: 2.5rem 1rem;
+   }
+
+   .content p {
+     line-height: 1.875;;
+   }
 
     .logo {
       width: 4.75rem;
@@ -15,5 +37,15 @@
         line-height: 4.75rem;
       }
     }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    padding: 1.5rem 0;
+
+    .content .inner {
+      padding: 2.5rem 0;
+    } 
   }
 }
